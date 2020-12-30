@@ -56,10 +56,12 @@ systemctl enable container_borgbackup-server
 ### Add an SSH public key
 
 The `/data` volume is initilized with an empty file `ssh/authorized_keys`. This
-file will list all SSH public key allowed to authenticate with the `borgbackup`
+file contains all SSH public keys allowed to authenticate with the `borgbackup`
 account on the container. Before initializing a Borg repository, you must add a
 line in this file.
-* for example, to allow Alice to the repo1 repository:
+
+* for example, to allow Alice on the repo1 repository, add this line to the
+  `ssh/authorized_keys` file:
 
 ```
 # replace "alice_ssh_public_key" with the real Alice SSH public key ("ssh-rsa AAAA.... alice@example.com")
