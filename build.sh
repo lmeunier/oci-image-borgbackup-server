@@ -98,7 +98,7 @@ TAG="$ARCH-$BORGBACKUP_VERSION"
 buildah commit $runtime_container borgbackup-server:$TAG
 
 # Clean up
-#buildah unmount $build_container
-#buildah unmount $runtime_container
-#buildah rm $build_container $runtime_container
+buildah unmount $build_container
+buildah unmount $runtime_container
+buildah rm $build_container $runtime_container
 
