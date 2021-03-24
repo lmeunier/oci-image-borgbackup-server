@@ -33,7 +33,7 @@ podman create                                     \
   --network host-bridge                           \
   --ip 192.168.1.221                              \
   --name borgbackup-server                        \
-  docker.io/lmeunier/borgbackup-server:1.1.15
+  docker.io/lmeunier/borgbackup-server:1.1.16
 ```
 
 * generate a systemd unit file
@@ -115,13 +115,13 @@ TAG based on the current CPU architecture and the BorgBackup version.
 ```
 $ podman images
 REPOSITORY                   TAG           IMAGE ID      CREATED            SIZE
-localhost/borgbackup-server  armv7-1.1.15  70d3d8f85367  About an hour ago  145 MB
+localhost/borgbackup-server  armv7-1.1.16  70d3d8f85367  About an hour ago  145 MB
 ```
 
 * test the builed OCI image
 
 ```
-podman run -it --rm borgbackup-server:armv7-1.1.15
+podman run -it --rm borgbackup-server:armv7-1.1.16
 ```
 
 
@@ -137,7 +137,7 @@ buildah login docker.io
 
 
 ```
-TAG="armv7-1.1.15"
+TAG="armv7-1.1.16"
 USERNAME="lmeunier"
 
 buildah push borgbackup-server:$TAG docker://docker.io/$USERNAME/borgbackup-server:$TAG
@@ -146,7 +146,7 @@ buildah push borgbackup-server:$TAG docker://docker.io/$USERNAME/borgbackup-serv
 ### Push a multi-arch image to Docker Hub
 
 ```
-BORGBACKUP_VERSION="1.1.15"
+BORGBACKUP_VERSION="1.1.16"
 USERNAME="lmeunier"
 
 ARCHS="amd64 armv7"

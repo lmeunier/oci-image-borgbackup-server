@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BORGBACKUP_VERSION="1.1.15"
+BORGBACKUP_VERSION="1.1.16"
 
 set -e
 
