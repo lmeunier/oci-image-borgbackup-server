@@ -29,7 +29,7 @@ buildah run $build_container bash -e << EOF
     apt-get upgrade -y
     apt-get install -y python3 python3-dev python3-pip python-virtualenv \
         libssl-dev openssl libacl1-dev libacl1 build-essential \
-        libfuse-dev fuse pkg-config git libffi-dev zlib1g-dev wget
+        libfuse-dev fuse pkg-config git libffi-dev zlib1g-dev wget rustc
     git clone -b ${BORGBACKUP_VERSION} https://github.com/borgbackup/borg.git
     wget https://github.com/pyinstaller/pyinstaller/releases/download/v4.0/PyInstaller-4.0.tar.gz
     virtualenv --python=python3 borg-env
